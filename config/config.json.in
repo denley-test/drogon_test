@@ -1,0 +1,21 @@
+/* argusai_backend_config.json.in */
+
+{
+  "version": "@PROJECT_VERSION@",
+  "run_as_daemon": false,
+  "relaunch_on_error": false,
+  "threads_num": 16,
+  "log": {
+        "log_path": "./",
+        "logfile_base_name": "",
+        "log_size_limit": 100000000,
+        "log_level": "TRACE"
+      },
+  "listeners": [
+      {
+        "address": "0.0.0.0",
+        "port": 80,
+        "https": false
+      }
+    ]
+}

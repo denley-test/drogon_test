@@ -1,13 +1,8 @@
 #include <drogon/drogon.h>
-using namespace drogon;
 
 int main(int argc, const char* argv[])
 {
-  app().setLogPath("./")
-       .setLogLevel(trantor::Logger::kWarn)
-       .addListener("0.0.0.0", 80)
-       .setThreadNum(16)
-       .run();
+  drogon::app().loadConfigFile("argusai_backend_config.json").run();
 
   return 0;
 }

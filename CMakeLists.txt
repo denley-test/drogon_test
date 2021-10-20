@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 project(argusai_backend VERSION 0.0.1 LANGUAGES CXX)
 
+configure_file(${CMAKE_SOURCE_DIR}/config/config.json.in
+  ${CMAKE_BINARY_DIR}/argusai_backend_config.json)
+
 add_executable(${PROJECT_NAME} "")
 target_compile_features(${PROJECT_NAME}
   PRIVATE
