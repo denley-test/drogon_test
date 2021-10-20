@@ -20,6 +20,7 @@ target_link_libraries(${PROJECT_NAME}
 target_sources(${PROJECT_NAME}
   PRIVATE
     src/main.cpp
+    src/controller/HomeController.cpp
 )
 
 add_subdirectory(vendor/drogon)
