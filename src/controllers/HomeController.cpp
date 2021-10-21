@@ -3,9 +3,8 @@ using namespace drogon;
 
 void HomeController::asyncHandleHttpRequest(const HttpRequestPtr& req, std::function<void (const HttpResponsePtr &)> &&callback)
 {
-  auto resp=HttpResponse::newHttpResponse();
-  resp->setStatusCode(k200OK);
-  resp->setContentTypeCode(CT_TEXT_HTML);
-  resp->setBody("Hello, This is home page!");
+  HttpViewData data;
+  data["name"] = req->getParameter("name");
+  auto resp = HttpResponse::newHttpViewResponse("HomeView.csp", data);
   callback(resp);
 }

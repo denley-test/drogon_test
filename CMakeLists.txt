@@ -35,6 +35,10 @@ target_sources(${PROJECT_NAME}
     src/main.cpp
     src/controllers/HomeController.cpp
 )
+include(${CMAKE_SOURCE_DIR}/vendor/drogon/cmake/DrogonUtilities.cmake)
+drogon_create_views(${PROJECT_NAME}
+                    ${CMAKE_SOURCE_DIR}/src/views
+                    ${CMAKE_BINARY_DIR})
 install(TARGETS ${PROJECT_NAME} ${PROJECT_LIB_NAME} ${PROJECT_LIB_NAME}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
