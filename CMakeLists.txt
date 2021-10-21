@@ -21,7 +21,7 @@ target_link_libraries(${PROJECT_LIB_NAME}
 )
 target_sources(${PROJECT_LIB_NAME}
   PRIVATE
-    src/controller/HomeController.cpp
+    src/controllers/HomeController.cpp
 )
 
 add_executable(${PROJECT_NAME} "")
