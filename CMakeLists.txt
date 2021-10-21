@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 project(argusai_backend VERSION 0.0.1 LANGUAGES CXX)
 
+option(BUILD_TESTS "Build unit tests" ON)
 configure_file(${CMAKE_SOURCE_DIR}/config/config.json.in
   ${CMAKE_BINARY_DIR}/argusai_backend_config.json)
 
@@ -38,5 +39,28 @@ install(TARGETS ${PROJECT_NAME} ${PROJECT_LIB_NAME} ${PROJECT_LIB_NAME}
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
+if(BUILD_TESTS)
+  set(PROJECT_TEST_NAME "${PROJECT_NAME}_test")
+  find_package(GTest REQUIRED)
+  add_executable(${PROJECT_TEST_NAME} "")
+  target_link_libraries(${PROJECT_TEST_NAME}
+    PRIVATE
+      ${PROJECT_LIB_NAME}
+      ${GTEST_BOTH_LIBRARIES}
+  )
+  target_sources(${PROJECT_TEST_NAME}
+    PRIVATE
+      test/main.cpp
+  )
+  include(CTest)
+  enable_testing()
+  add_test(
+    NAME ${PROJECT_TEST_NAME}
+    COMMAND $<TARGET_FILE:${PROJECT_TEST_NAME}>
+  )
+  install(TARGETS ${PROJECT_TEST_NAME}
+    DESTINATION ${CMAKE_INSTALL_BINDIR}/test
+  )
+endif()
 
 add_subdirectory(vendor/drogon)
