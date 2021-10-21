@@ -13,6 +13,7 @@ target_compile_features(${PROJECT_LIB_NAME}
 )
 target_include_directories(${PROJECT_LIB_NAME}
   PUBLIC
+    include
     vendor/drogon
 )
 target_link_libraries(${PROJECT_LIB_NAME}
@@ -21,6 +22,7 @@ target_link_libraries(${PROJECT_LIB_NAME}
 )
 target_sources(${PROJECT_LIB_NAME}
   PRIVATE
+    src/argusai_backend_helper.cpp
     src/controllers/HomeController.cpp
 )
 
@@ -51,6 +53,7 @@ if(BUILD_TESTS)
   target_sources(${PROJECT_TEST_NAME}
     PRIVATE
       test/main.cpp
+      test/test_argusai_backend_helper.cpp
   )
   include(CTest)
   enable_testing()
