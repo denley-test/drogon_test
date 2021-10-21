@@ -23,7 +23,6 @@ target_link_libraries(${PROJECT_LIB_NAME}
 target_sources(${PROJECT_LIB_NAME}
   PRIVATE
     src/argusai_backend_helper.cpp
-    src/controllers/HomeController.cpp
 )
 
 add_executable(${PROJECT_NAME} "")
@@ -34,6 +33,7 @@ target_link_libraries(${PROJECT_NAME}
 target_sources(${PROJECT_NAME}
   PRIVATE
     src/main.cpp
+    src/controllers/HomeController.cpp
 )
 install(TARGETS ${PROJECT_NAME} ${PROJECT_LIB_NAME} ${PROJECT_LIB_NAME}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
