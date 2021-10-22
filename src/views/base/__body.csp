@@ -1,0 +1,4 @@
+<%c++
+    auto name=@@.get<std::string>("name");
+%>
+<h1>我是<%c++ $$<<name; %></h1>
