@@ -4,3 +4,9 @@
   cd vendor/drogon
   git submodule update --init
   ```
+
+
+* mac下build前需要安装如下库
+```bash
+brew install coreutils cmake jsoncpp ossp-uuid openssl doxygen googletest
+```

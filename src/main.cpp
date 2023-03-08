@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[])
 {
-  drogon::app().loadConfigFile("argusai_backend_config.json").run();
+  drogon::app().loadConfigFile("drogon_config.json").run();
 
   return 0;
 }

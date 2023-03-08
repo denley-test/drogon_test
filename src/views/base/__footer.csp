@@ -4,5 +4,5 @@
 <footer class="footer">
   <hr>
   <p class="text-center"><a href="http://www.miibeian.gov.cn" target="_blank">粤ICP备18078427号</a></p>
-  <p class="text-center">Copyright © <%c++ $$<<copyright_year; %> argusai.net, 保留所有权利</p>
+  <p class="text-center">Copyright © <%c++ $$<<copyright_year; %> justtodo.com, 保留所有权利</p>
 </footer>
